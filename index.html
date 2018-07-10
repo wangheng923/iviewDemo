@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0">
+		<script src="https://cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+		<!--<script src="https://cdn.bootcss.com/js-cookie/latest/js.cookie.min.js"></script>-->
+		<script src="https://cdn.bootcss.com/vuex/3.0.1/vuex.min.js"></script>
+
+		<script src="static/js/digest-ajax.min.js"></script>
+		<script src="static/js/jquery.md5.js"></script>
+		<script>
+			var rootUrl = 'http://192.168.27.122:8080';
+			//  	var rootUrl = 'http://180.97.30.38:3000';
+			function sendCode() {
+				$.ajax({
+					type: "get",
+					url: rootUrl + "/common/verifyCode",
+					async: false
+				});
+			}
+			//			$.ajax({
+			//				type:"get",
+			//				url:rootUrl + "/common/verifyCode",
+			//				async:false
+			//			});
+			//			$.ajax({
+			//				type:"get",
+			//				url:rootUrl + "/common/verifyCode",
+			//				async:false
+			//			});
+			//			var verify = {
+			//				data:{verifyCode: '1234'},
+			//				
+			//			}
+			//			$.postDigest(rootUrl + "/login", verify, 'admin', 'admin').done(function(data, textStatus, jqXHR) {
+			//				console.log(JSON.stringify(data));
+			//			}).fail(function(jqXHR, textStatus, errorThrown) {
+			//				console.log("error");
+			//			});
+		</script>
+		<title>commonservice-web</title>
+	</head>
+
+	<body>
+		<div id="app"></div>
+		<button onclick="sendCode()" value="发送验证码"></button>
+		<!-- built files will be auto injected -->
+	</body>
+
+</html>
